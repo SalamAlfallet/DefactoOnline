@@ -1,0 +1,95 @@
+
+
+
+<div class="tablestyle">
+
+    <h1 >Product Edit Form</h1>
+
+    {{data.name}}
+<mat-card class="example-card" >
+
+<mat-card-content>
+  <form class="example-form" [formGroup]="editForm" >
+
+      
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter your name product"  class="form-control" formControlName="name"  required>
+     
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-radio-group class="example-radio-group" formControlName="type" >
+          <mat-radio-button class="example-radio-button" *ngFor="let collections of collection" [value]="(collections)" >
+            {{collections}} 
+          </mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br>
+
+      <mat-form-field class="example-full-width">
+       <input matInput placeholder="Enter your Description"  class="form-control" formControlName="description"  ([ngModel])="obj.name"  required>
+      </mat-form-field>
+  
+  </form>
+  <!-- <span>{{errorName}}</span> -->
+  <!-- <span>{{errorpass}}</span> -->
+  <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+</mat-card-content>
+<mat-card-actions>
+  <button  mat-raised-button  color="primary" (click)='editProduct()'>edit</button>
+</mat-card-actions>
+</mat-card> 
+</div>
+
+
+<!-- 
+<html>
+  <h1 >Product Edit Form</h1>
+  <div id="form-outer">
+    
+   
+  
+    {{data.name}}
+    
+  
+        <div class="labels" >
+          <label> Name Product : </label>
+        </div>
+        <div class="rightTab">
+          <input autofocus type="text" value="(data.name)" [(ngModel)] ='name' class="input-field" placeholder="Enter your name product" required>
+        </div>
+     
+        <div class="labels">
+          <label >  Category: </label>
+        </div>
+        <div class="rightTab">
+            <input type="radio" [(ngModel)] ='type' value="(data.type)" > Man<br>
+            <input type="radio" [(ngModel)] ='type' value="(data.type)"> woman<br>
+            <input type="radio" [(ngModel)] ='type' value="(data.type)"> baby
+         
+        </div>
+      
+        <div class="labels">
+          <label> Description : </label>
+        </div>
+        <div class="rightTab">
+          <input type="text"  value="(data.description)" [(ngModel)] ='description' class="input-field" placeholder="Description">
+        </div>
+     
+      
+  </div>
+    
+       
+      <button id="submit" type="submit" (click)=" editProduct()">Edit</button>
+  
+      
+   <form [FormGroup] ='myForm' (ngubmit) ='onSubmitRe(myForm)'>
+  name:<input ForControlName='name'/>
+  age : <input ForControlName='age'/>
+  
+  
+  </form>
+  
+   
+   
+      </html> -->

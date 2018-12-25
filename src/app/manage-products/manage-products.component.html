@@ -1,0 +1,203 @@
+
+
+<div class="tablestyle">
+
+        <h1 >Product Add Form</h1>
+
+        
+<mat-card class="example-card" >
+    
+    <mat-card-content>
+      <form class="example-form" [formGroup]="addForm" >
+
+          
+              <mat-form-field class="example-full-width">
+             <input matInput placeholder="Enter your Id product" class="form-control" formControlName="id"  required>
+              </mat-form-field>
+            <br>
+            <br>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter your name product"  class="form-control" formControlName="name"  required>
+         
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-radio-group class="example-radio-group" formControlName="type" >
+              <mat-radio-button class="example-radio-button" *ngFor="let collections of collection" [value]="collections" >
+                {{collections}}
+              </mat-radio-button>
+            </mat-radio-group>
+            <br>
+            <br>
+
+          <mat-form-field class="example-full-width">
+           <input matInput placeholder="Enter your Description"  class="form-control" formControlName="description"  required>
+          </mat-form-field>
+      
+      </form>
+      <!-- <span>{{errorName}}</span> -->
+      <!-- <span>{{errorpass}}</span> -->
+      <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  mat-raised-button  color="primary" (click)='addProduct(addForm)'>Adding</button>
+    </mat-card-actions>
+  </mat-card> 
+</div>
+<!--   
+<div id="form-outer">
+  
+ 
+
+  <div class="labels">
+    <label> ID: </label>
+  </div>
+  <div class="rightTab">
+    <input autofocus type="text"  [(ngModel)] ='id' class="input-field" placeholder="Enter your Id product" required>
+  </div>
+
+      <div class="labels">
+        <label> Name Product : </label>
+      </div>
+      <div class="rightTab">
+        <input autofocus type="text"  [(ngModel)] ='name' class="input-field" placeholder="Enter your name product" required>
+      </div>
+   
+      <div class="labels">
+        <label >  Category: </label>
+      </div>
+      <div class="rightTab">
+          <input type="radio" [(ngModel)] ='type' value="man" > Man<br>
+          <input type="radio" [(ngModel)] ='type' value="woman"> woman<br>
+          <input type="radio" [(ngModel)] ='type' value='baby'> baby
+       
+      </div>
+    
+      <div class="labels">
+        <label> Description : </label>
+      </div>
+      <div class="rightTab">
+        <input type="text"  [(ngModel)] ='description' class="input-field" placeholder="Description">
+      </div>
+   
+    
+</div>
+  
+     
+    <button id="submit" type="submit" (click)=" addProduct()">Adding</button>
+
+    
+       --> 
+
+    
+
+
+      
+
+<!-- 
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+    
+      <div *ngFor= 'let prod of data'>
+      <ng-container matColumnDef="position" >
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{prod.id}} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name Product </th>
+        <td mat-cell *matCellDef="let element">{{prod.name}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> type </th>
+        <td mat-cell *matCellDef="let element"> {{prod.type}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> description </th>
+        <td mat-cell *matCellDef="let element"> {{prod.description}}</td>
+      </ng-container>
+  
+      
+       <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>delete </th>
+          <td mat-cell *matCellDef="let element"> delete</td>
+        </ng-container>
+
+       
+       <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>Edit </th>
+          <td mat-cell *matCellDef="let element"> edit</td>
+        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </div>
+    </table>
+
+</div> -->
+  <!-- ///////////////////// -->
+       <table>
+            <tr>
+                <th>Id</th>
+                <th>name Product</th>
+                <th>Category</th> 
+                <th>description</th>
+                <th>Edit</th>
+                <th >Delete</th>
+                
+              </tr>
+              <tr *ngFor= 'let prod of data'>
+                <td>{{prod.id}}</td>
+                <td>{{prod.name}}</td> 
+                <td>{{prod.type}}</td>
+                <td>{{prod.description}}</td>
+                <td><button (click)="onClick(prod.id)">edit</button></td>
+                <td ><button (click)="delete(prod.id)"> delete </button> </td>
+              </tr>
+        </table> 
+         
+
+
+ 
+<!-- 
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" 
+  
+   
+    <div  *ngFor= 'let prod of data'>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{prod.name}} {{element.id}} </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </div>
+  </table>
+    -->
+  

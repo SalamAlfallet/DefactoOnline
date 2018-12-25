@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "pman1",
+      "type": "man",
+      "description": " i am pman1"
+    },
+    {
+      "id": 3,
+      "name": "pman3",
+      "type": "woman",
+      "description": " i am pman3"
+    },
+    {
+      "id": 4,
+      "name": "pman4",
+      "type": "man",
+      "description": " i am pman4"
+    },
+    {
+      "id": 5,
+      "name": "pman5",
+      "type": "baby",
+      "description": " i am pman5"
+    },
+    {
+      "id": "78",
+      "name": "jaket",
+      "type": "woman",
+      "description": "jaket woman"
+    },
+    {
+      "id": "12",
+      "name": "hh",
+      "type": "baby",
+      "description": "hh"
+    },
+    {
+      "id": "55",
+      "name": "woman jaket",
+      "type": "woman",
+      "description": "red jaket"
+    },
+    {
+      "id": "123",
+      "name": "techear",
+      "type": "woman",
+      "description": "techear"
+    }
+  ]
+}
